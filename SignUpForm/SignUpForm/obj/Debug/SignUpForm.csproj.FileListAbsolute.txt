@@ -1,10 +1,11 @@
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\bin\Debug\SignUpForm.exe.config
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\bin\Debug\SignUpForm.exe
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\bin\Debug\SignUpForm.pdb
-D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\obj\Debug\SignUpForm.csprojResolveAssemblyReference.cache
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\obj\Debug\SignUpForm.Form1.resources
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\obj\Debug\SignUpForm.Properties.Resources.resources
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\obj\Debug\SignUpForm.csproj.GenerateResource.Cache
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\obj\Debug\SignUpForm.exe
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\obj\Debug\SignUpForm.pdb
 D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\bin\Debug\Bunifu_UI_v1.52.dll
+D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\obj\Debug\SignUpForm.LoginForm.resources
+D:\IT4\projects\attendence_system\SignUpForm\SignUpForm\obj\Debug\SignUpForm.csprojResolveAssemblyReference.cache
