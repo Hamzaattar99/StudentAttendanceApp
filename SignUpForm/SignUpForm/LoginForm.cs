@@ -107,5 +107,16 @@ namespace SignUpForm
                 obj.Show(); // show the (Sign Up) for entering a new password because no password exsists .
             }
         }
+
+        // To activate (KeyDown) --> 1.making KeyPreview = true  from the properties OR from the code writing this (this.KeyDown += Form1_KeyDown;) in the constructor .
+        // This method used if the user clicked (Enter) then the login button will be clicked .
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode  == Keys.Enter)
+            {
+                bunifuThinButton21_Click(null , null );
+
+            }
+        }
     }
 }

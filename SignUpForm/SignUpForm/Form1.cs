@@ -24,6 +24,10 @@ namespace SignUpForm
         public Form1()
         {
             InitializeComponent();
+            //string pat = AppDomain.CurrentDomain.BaseDirectory;
+
+            //string pp = Directory.GetParent(pat).Parent.Parent.FullName;
+            //MessageBox.Show(pp);
 
             // adding the event of typing in the first TextBox to this method .
             passwordTextBox.OnValueChanged += TxtBoxes_OnValueChanged;
@@ -38,6 +42,20 @@ namespace SignUpForm
             bunifuThinButton21.Visible = false;
             bunifuThinButton21.Enabled = false;
 
+        }
+
+        // This function is (static) used without object . For getting the path of the project , out of (bin) and (Debug) folders .
+        public static string GetFolderRoot()
+        {
+            // Represents the domain of the project folder (current folder) in other words, the place where the program executes .
+            string path = AppDomain.CurrentDomain.BaseDirectory; // (BaseDirectory) --> gets the full path where program executes  ... (\bin\Debug)
+
+
+            //Gets the parent folder from the current path - (Parent.Parent) --> used twice to get back from (Debug) then (bin)
+            string projectPath = Directory.GetParent(path).Parent.Parent.FullName; // (FullName --> Gets the full path in string form instead of (DirectoryInfo) ... for example --> (C:\MyProject)
+
+
+            return projectPath;
         }
 
 
@@ -99,13 +117,17 @@ namespace SignUpForm
 
                  }
                  //assigning the path for the photos .
-                 string basePath = "D:/IT4/projects/attendence_system/SignUpForm/SignUpForm/Resources/icons/";
+                 string CurrentPath = Path.Combine(GetFolderRoot(), "Resources/icons/");
+
+
+                 // this Comment was a mistake about getting the full path of the project
+                // string basePath = "D:/IT4/projects/attendence_system/SignUpForm/SignUpForm/Resources/icons/";
 
 
                  if (pass == confirm && !string.IsNullOrWhiteSpace(pass) && !string.IsNullOrWhiteSpace(confirm)) // if 2 textBoxes are equal and none of them has white space then :
                  {
                      // assigning the photo icon to the pictureBox and shows the (correct) icon
-                     iconConfirm.Image = Image.FromFile(basePath + "accept.png");
+                     iconConfirm.Image = Image.FromFile(CurrentPath + "accept.png");
                      iconConfirm.Visible = true;
                      // shows the (save) button and enable it
                      bunifuThinButton21.Visible = true; 
@@ -115,7 +137,7 @@ namespace SignUpForm
 
                  else // otherwise :
                  { // assigning the (x) icon to the pictureBox and shows it .
-                     iconConfirm.Image = Image.FromFile(basePath + "remove.png");
+                     iconConfirm.Image = Image.FromFile(CurrentPath + "remove.png");
                      iconConfirm.Visible = true;
 
                      // Hides the (save) button and disenable it
