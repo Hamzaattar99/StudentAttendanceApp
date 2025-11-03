@@ -98,14 +98,14 @@ namespace SignUpForm
         // before opening (Login Form ) these happen :
         private void LoginForm_Load(object sender, EventArgs e) 
         {
-            Form1 obj = new Form1(); // Creating an object from (Sign Up ) form to open it .
+            //Form1 obj = new Form1(); // Creating an object from (Sign Up ) form to open it .
 
 
-            if (!File.Exists(filePath)) // if the file does not exsists then :
-            {
-                this.Hide(); // hide the current form
-                obj.Show(); // show the (Sign Up) for entering a new password because no password exsists .
-            }
+            //if (!File.Exists(filePath)) // if the file does not exsists then :
+           // {
+             //   this.Hide(); // hide the current form
+               // obj.Show(); // show the (Sign Up) for entering a new password because no password exsists .
+            //}
         }
 
         // To activate (KeyDown) --> 1.making KeyPreview = true  from the properties OR from the code writing this (this.KeyDown += Form1_KeyDown;) in the constructor .
@@ -117,6 +117,11 @@ namespace SignUpForm
                 bunifuThinButton21_Click(null , null );
 
             }
+        }
+
+        private void bunifuCustomLabel5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

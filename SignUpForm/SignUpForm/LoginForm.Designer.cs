@@ -34,13 +34,16 @@
             this.lablePassword = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.passwordTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.exitButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelBackground = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.exitButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -65,9 +68,9 @@
             this.lablePassword.ForeColor = System.Drawing.SystemColors.Control;
             this.lablePassword.Location = new System.Drawing.Point(307, 221);
             this.lablePassword.Name = "lablePassword";
-            this.lablePassword.Size = new System.Drawing.Size(235, 25);
+            this.lablePassword.Size = new System.Drawing.Size(240, 25);
             this.lablePassword.TabIndex = 14;
-            this.lablePassword.Text = "Enter the Password :";
+            this.lablePassword.Text = "Enter the Username :";
             // 
             // bunifuCustomLabel1
             // 
@@ -77,9 +80,9 @@
             this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(307, 149);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(573, 25);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(732, 25);
             this.bunifuCustomLabel1.TabIndex = 14;
-            this.bunifuCustomLabel1.Text = "Please Enter Your Password to Login This Progarm";
+            this.bunifuCustomLabel1.Text = "Please Enter Your Username and Password to Login This Progarm";
             // 
             // passwordTextBox
             // 
@@ -100,71 +103,6 @@
             this.passwordTextBox.Size = new System.Drawing.Size(32, 56);
             this.passwordTextBox.TabIndex = 19;
             this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.Honeydew;
-            this.bunifuThinButton21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Login";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.Green;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(348, 369);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(86, 46);
-            this.bunifuThinButton21.TabIndex = 15;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
-            // 
-            // exitButton
-            // 
-            this.exitButton.Activecolor = System.Drawing.Color.Maroon;
-            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exitButton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.exitButton.BorderRadius = 7;
-            this.exitButton.ButtonText = "Exit";
-            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton.DisabledColor = System.Drawing.Color.Gray;
-            this.exitButton.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.exitButton.Iconimage = global::SignUpForm.Properties.Resources.logout;
-            this.exitButton.Iconimage_right = null;
-            this.exitButton.Iconimage_right_Selected = null;
-            this.exitButton.Iconimage_Selected = null;
-            this.exitButton.IconMarginLeft = 0;
-            this.exitButton.IconMarginRight = 0;
-            this.exitButton.IconRightVisible = true;
-            this.exitButton.IconRightZoom = 0D;
-            this.exitButton.IconVisible = true;
-            this.exitButton.IconZoom = 40D;
-            this.exitButton.IsTab = false;
-            this.exitButton.Location = new System.Drawing.Point(693, 14);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.exitButton.OnHovercolor = System.Drawing.Color.MediumAquamarine;
-            this.exitButton.OnHoverTextColor = System.Drawing.Color.White;
-            this.exitButton.selected = false;
-            this.exitButton.Size = new System.Drawing.Size(76, 43);
-            this.exitButton.TabIndex = 20;
-            this.exitButton.Text = "Exit";
-            this.exitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exitButton.Textcolor = System.Drawing.Color.MediumAquamarine;
-            this.exitButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // bunifuElipse1
             // 
@@ -212,18 +150,132 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(301, 552);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 22;
+            // 
+            // bunifuMaterialTextbox1
+            // 
+            this.bunifuMaterialTextbox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox1.HintText = "";
+            this.bunifuMaterialTextbox1.isPassword = false;
+            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.SlateGray;
+            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.White;
+            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.SlateGray;
+            this.bunifuMaterialTextbox1.LineThickness = 4;
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(301, 367);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(32, 56);
+            this.bunifuMaterialTextbox1.TabIndex = 19;
+            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Modern No. 20", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(307, 337);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(235, 25);
+            this.bunifuCustomLabel5.TabIndex = 14;
+            this.bunifuCustomLabel5.Text = "Enter the Password :";
+            this.bunifuCustomLabel5.Click += new System.EventHandler(this.bunifuCustomLabel5_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.Activecolor = System.Drawing.Color.Maroon;
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.exitButton.BorderRadius = 7;
+            this.exitButton.ButtonText = "Exit";
+            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton.DisabledColor = System.Drawing.Color.Gray;
+            this.exitButton.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.exitButton.Iconimage = global::SignUpForm.Properties.Resources.logout;
+            this.exitButton.Iconimage_right = null;
+            this.exitButton.Iconimage_right_Selected = null;
+            this.exitButton.Iconimage_Selected = null;
+            this.exitButton.IconMarginLeft = 0;
+            this.exitButton.IconMarginRight = 0;
+            this.exitButton.IconRightVisible = true;
+            this.exitButton.IconRightZoom = 0D;
+            this.exitButton.IconVisible = true;
+            this.exitButton.IconZoom = 40D;
+            this.exitButton.IsTab = false;
+            this.exitButton.Location = new System.Drawing.Point(693, 14);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.exitButton.OnHovercolor = System.Drawing.Color.MediumAquamarine;
+            this.exitButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.exitButton.selected = false;
+            this.exitButton.Size = new System.Drawing.Size(76, 43);
+            this.exitButton.TabIndex = 20;
+            this.exitButton.Text = "Exit";
+            this.exitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exitButton.Textcolor = System.Drawing.Color.MediumAquamarine;
+            this.exitButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.Transparent;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.Honeydew;
+            this.bunifuThinButton21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "Login";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.Green;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.Location = new System.Drawing.Point(312, 512);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(86, 46);
+            this.bunifuThinButton21.TabIndex = 15;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panelBackground);
             this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.bunifuMaterialTextbox1);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.lablePassword);
             this.ForeColor = System.Drawing.SystemColors.Highlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -255,5 +307,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
     }
 }
