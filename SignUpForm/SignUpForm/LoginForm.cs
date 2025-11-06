@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.OleDb;
 
 namespace SignUpForm
 {
@@ -21,6 +22,7 @@ namespace SignUpForm
         public LoginForm()
         {
             InitializeComponent();
+            roleComboBox.SelectedIndex = 1;
         }
 
         private void iconConfirm_Click(object sender, EventArgs e)
@@ -32,39 +34,143 @@ namespace SignUpForm
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             // Taking the password from the user from the TextBox and assigned to a string variable .
-            string pass = passwordTextBox.Text;
+            string pass = passwordeTextBox.Text.Trim();
+            string user = usernameTextBox.Text.Trim();
+
+
+            if(user == "" || pass == "")
+            {
+                MessageBox.Show("Please Enter Username and Password .", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            
             //Crating an object to get the hashed password from it
-            Form1 obj = new Form1();
+          //  Form1 obj = new Form1();
             //using the object to call the public the method from (Form1) and send the password to hash it and retrun the hashed password and assign to a variable .
-            string hashedPass = obj.getHashedPassword(pass);
+            string hashedPass = HashingClass.getHashedPassword(pass);
+           
+            OleDbConnection conn = null;
 
 
-              if(!File.Exists(filePath)) // check if the exsits 
+            try
+            {
+                conn = DatabaseConnection.GetConnection();
+
+                string query = "SELECT password, role FROM users WHERE username = ?";
+
+
+                using( OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", user);
+
+
+                    using(OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                       if(reader.Read())
+                        {
+                            string storedHashedPassword = reader["password"].ToString();
+                            string role = reader["role"].ToString();
+
+                            if (storedHashedPassword == hashedPass)
+                            {
+                                MessageBox.Show("Login Successfully !!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                               if(role == "admin")
+                               {
+                                   AdminDashboard admin = new AdminDashboard();
+                                   admin.Show();
+                                   this.Hide();
+                               }
+                               else if( role == "user")
+                               {
+                                   MainForm main = new MainForm(user);
+
+                                   
+                                   main.Show();
+                                   this.Hide();
+                               }
+                            }
+                          else
+                           {
+                                MessageBox.Show("Wrong Password !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           }
+                        }
+                     else
+                        {
+                            MessageBox.Show("No Such User!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+
+
+
+
+
+
+               
+                
+
+            /*    object result = cmd.ExecuteScalar();
+
+                if(result == null)
+                {
+                    MessageBox.Show("No Such User!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string storedHashedPassword = result.ToString();
+
+                    if(storedHashedPassword == hashedPass)
+                    {
+                        MessageBox.Show("Login Successfully !!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //mainForm or adminDashboard depends on the role from the comboBox .
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Password !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } */
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                DatabaseConnection.CloseConnection();
+            }
+
+
+            /*  if(!File.Exists(filePath)) // check if the exsits 
               {
                   MessageBox.Show("The File Not Exists!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // it show a message
                   return; // get out and stop from comparing and other opearations because no file ...
-              }
+              } */
 
             // if the file exists then will execute these below ..
 
-              string storedHashedPassword = File.ReadAllText(filePath).Trim(); // it reads all the text in the file and deletes the white spaces and \n and \t
+             /* string storedHashedPassword = File.ReadAllText(filePath).Trim(); // it reads all the text in the file and deletes the white spaces and \n and \t
               
             //To check the equality between the stored password and the entered password
             // StringCompariosn.[Ordinal - OrdinalIgnoreCase -CurrenCulture - InvariantCultureIgnoreCase] options .
             if(hashedPass.Equals(storedHashedPassword, StringComparison.OrdinalIgnoreCase))
             {
                 // if equal then :
-                errorProvider1.SetError(passwordTextBox, ""); // hiding the error provider icon
+                errorProvider1.SetError(usernameTextBox, ""); // hiding the error provider icon
                 MessageBox.Show("Login is Done Successfully!", "Passed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); // showing a message
             }
 
             else // otherwise :
             {
-                errorProvider1.SetError(passwordTextBox, "Wrong Password Entered!!"); //Showing the error provider icon
+                errorProvider1.SetError(usernameTextBox, "Wrong Password Entered!!"); //Showing the error provider icon
                 MessageBox.Show("Password is Wrong!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); // Showing a message
             }
               
-
+            */
 
         }
 
@@ -76,6 +182,7 @@ namespace SignUpForm
             DialogResult YesNoResult = MessageBox.Show("Are You Sure!? You Want to Exit ?", "Eixt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (YesNoResult == DialogResult.Yes) // checks if chose Yes it will get out of the program
             {
+                DatabaseConnection.CloseConnection();
                 Application.Exit(); // Exits from whole program and all Forms .
             }
         }

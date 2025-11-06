@@ -13,19 +13,21 @@ namespace SignUpForm
 {
     public partial class AddUserForm : Form
     {
-        private RSAHelper rsaHelper;
+        private RSAHelper rsaHelper; //
 
-        private string publicKey;
-        private string privateKey;
+        private string publicKey; //
+        private string privateKey; //
+
+       
 
         public AddUserForm()
         {
             InitializeComponent();
             roleComboBox.SelectedIndex = 1;
-            rsaHelper = new RSAHelper();
+            rsaHelper = new RSAHelper(); //
 
-            publicKey = rsaHelper.GetPublicKeyXml();
-            privateKey = rsaHelper.GetPrivateKeyXml();
+            publicKey = rsaHelper.GetPublicKeyXml(); //
+            privateKey = rsaHelper.GetPrivateKeyXml(); //
         }
 
         private void AddUser(string username , string password, string fullname , string role)
@@ -85,8 +87,8 @@ namespace SignUpForm
                 }
 
 
-              string encryptedPassword = Encrypt(password);
-              AddUser(username, encryptedPassword, fullname, role);
+                string hashedPassword = HashingClass.getHashedPassword(password);
+              AddUser(username, hashedPassword, fullname, role);
             }
 
             catch(Exception ex)

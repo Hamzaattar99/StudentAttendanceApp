@@ -33,14 +33,14 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lablePassword = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.passwordTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.usernameTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelBackground = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.roleComboBox = new System.Windows.Forms.ComboBox();
+            this.passwordeTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.exitButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -84,25 +84,25 @@
             this.bunifuCustomLabel1.TabIndex = 14;
             this.bunifuCustomLabel1.Text = "Please Enter Your Username and Password to Login This Progarm";
             // 
-            // passwordTextBox
+            // usernameTextBox
             // 
-            this.passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.passwordTextBox.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.ForeColor = System.Drawing.Color.Black;
-            this.passwordTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.passwordTextBox.HintText = "";
-            this.passwordTextBox.isPassword = false;
-            this.passwordTextBox.LineFocusedColor = System.Drawing.Color.SlateGray;
-            this.passwordTextBox.LineIdleColor = System.Drawing.Color.White;
-            this.passwordTextBox.LineMouseHoverColor = System.Drawing.Color.SlateGray;
-            this.passwordTextBox.LineThickness = 4;
-            this.passwordTextBox.Location = new System.Drawing.Point(301, 251);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(5);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(32, 56);
-            this.passwordTextBox.TabIndex = 19;
-            this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.usernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.usernameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.usernameTextBox.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTextBox.ForeColor = System.Drawing.Color.Black;
+            this.usernameTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.usernameTextBox.HintText = "";
+            this.usernameTextBox.isPassword = false;
+            this.usernameTextBox.LineFocusedColor = System.Drawing.Color.SlateGray;
+            this.usernameTextBox.LineIdleColor = System.Drawing.Color.White;
+            this.usernameTextBox.LineMouseHoverColor = System.Drawing.Color.SlateGray;
+            this.usernameTextBox.LineThickness = 4;
+            this.usernameTextBox.Location = new System.Drawing.Point(301, 251);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(5);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(32, 56);
+            this.usernameTextBox.TabIndex = 19;
+            this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuElipse1
             // 
@@ -150,38 +150,41 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // comboBox1
+            // roleComboBox
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.roleComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(301, 552);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 22;
+            this.roleComboBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.roleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.roleComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Items.AddRange(new object[] {
+            "admin",
+            "user"});
+            this.roleComboBox.Location = new System.Drawing.Point(301, 552);
+            this.roleComboBox.Name = "roleComboBox";
+            this.roleComboBox.Size = new System.Drawing.Size(121, 21);
+            this.roleComboBox.TabIndex = 22;
             // 
-            // bunifuMaterialTextbox1
+            // passwordeTextBox
             // 
-            this.bunifuMaterialTextbox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.SlateGray;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.SlateGray;
-            this.bunifuMaterialTextbox1.LineThickness = 4;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(301, 367);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(32, 56);
-            this.bunifuMaterialTextbox1.TabIndex = 19;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.passwordeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.passwordeTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordeTextBox.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordeTextBox.ForeColor = System.Drawing.Color.Black;
+            this.passwordeTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.passwordeTextBox.HintText = "";
+            this.passwordeTextBox.isPassword = false;
+            this.passwordeTextBox.LineFocusedColor = System.Drawing.Color.SlateGray;
+            this.passwordeTextBox.LineIdleColor = System.Drawing.Color.White;
+            this.passwordeTextBox.LineMouseHoverColor = System.Drawing.Color.SlateGray;
+            this.passwordeTextBox.LineThickness = 4;
+            this.passwordeTextBox.Location = new System.Drawing.Point(301, 367);
+            this.passwordeTextBox.Margin = new System.Windows.Forms.Padding(5);
+            this.passwordeTextBox.Name = "passwordeTextBox";
+            this.passwordeTextBox.Size = new System.Drawing.Size(32, 56);
+            this.passwordeTextBox.TabIndex = 19;
+            this.passwordeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel5
             // 
@@ -267,11 +270,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.roleComboBox);
             this.Controls.Add(this.panelBackground);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.bunifuMaterialTextbox1);
-            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.passwordeTextBox);
+            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.bunifuCustomLabel1);
@@ -299,7 +302,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel lablePassword;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox passwordTextBox;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox usernameTextBox;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuFlatButton exitButton;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
@@ -307,8 +310,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private System.Windows.Forms.ComboBox roleComboBox;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox passwordeTextBox;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
     }
 }

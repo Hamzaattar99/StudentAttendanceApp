@@ -64,14 +64,24 @@ namespace SignUpForm
 
         private void LoadUsers()
         {
-            OleDbConnection conn = DatabaseConnection.GetConnection();
-            string query = "SELECT * FROM users";
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
+            try
+            {
 
 
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dataGridView1.DataSource = dt;
+                OleDbConnection conn = DatabaseConnection.GetConnection();
+                string query = "SELECT * FROM users";
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, conn);
+
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
@@ -150,6 +160,18 @@ namespace SignUpForm
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+           
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // an object to take the answer (Yes/No) from messageBox
+            DialogResult YesNoResult = MessageBox.Show("Are You Sure!? You Want to Exit ?", "Eixt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (YesNoResult == DialogResult.Yes) // checks if chose Yes it will get out of the program
+            {
+                DatabaseConnection.CloseConnection();
+                Application.Exit(); // Exits from whole program and all Forms .
             }
         }
     }

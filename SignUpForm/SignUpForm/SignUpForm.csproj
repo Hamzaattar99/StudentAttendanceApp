@@ -72,6 +72,18 @@
     <Compile Include="AttendanceControl.Designer.cs">
       <DependentUpon>AttendanceControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePasswordControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordControl1.Designer.cs">
+      <DependentUpon>ChangePasswordControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeUsernameControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChangeUsernameControl1.Designer.cs">
+      <DependentUpon>ChangeUsernameControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -79,6 +91,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HashingClass.cs" />
     <Compile Include="HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +119,12 @@
       <DependentUpon>ReportsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="RSAHelper.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AttendanceControl.resx">
       <DependentUpon>AttendanceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordControl1.resx">
+      <DependentUpon>ChangePasswordControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeUsernameControl1.resx">
+      <DependentUpon>ChangeUsernameControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -154,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="ReportsControl.resx">
       <DependentUpon>ReportsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentsControl.resx">
       <DependentUpon>StudentsControl.cs</DependentUpon>
@@ -194,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons\read.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\icons8-user-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

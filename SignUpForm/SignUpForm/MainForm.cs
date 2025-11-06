@@ -12,12 +12,18 @@ namespace SignUpForm
 {
     public partial class MainForm : Form
     {
-       
-        public MainForm()
+        
+        private  string loggedInUser ;
+
+        public MainForm(string username)
         {
             try
             {
                 InitializeComponent();
+                loggedInUser = username;
+                usernameLabel.Text = loggedInUser;
+
+                
             }
 
             catch(Exception e)
@@ -26,12 +32,20 @@ namespace SignUpForm
             }
         }
 
+
+        // this function can be used for all kind of user info ....
+       /* public void setUserInfo(string role)
+        {
+            loggedInUser = role;
+        } */
+
         private void exitButton_Click(object sender, EventArgs e)
         {
             // an object to take the answer (Yes/No) from messageBox
             DialogResult YesNoResult = MessageBox.Show("Are You Sure!? You Want to Exit ?", "Eixt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (YesNoResult == DialogResult.Yes) // checks if chose Yes it will get out of the program
             {
+                DatabaseConnection.CloseConnection();
                 Application.Exit(); // Exits from whole program and all Forms .
             }
         }
@@ -69,6 +83,26 @@ namespace SignUpForm
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
             LoadUserControl(new AttendanceControl());
+        }
+
+        private void accountLogo_Click(object sender, EventArgs e)
+        {
+            
+            DialogResult YesNoResult = MessageBox.Show("Do Want to Logout ?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (YesNoResult == DialogResult.Yes) 
+            {
+                LoginForm logout = new LoginForm();
+
+                logout.Show();
+                this.Hide();
+            }
+        }
+
+        private void SettingsBtn_Click(object sender, EventArgs e)
+        {
+            SettingsForm settings = new SettingsForm(loggedInUser);
+
+            settings.Show();
         }
 
     
